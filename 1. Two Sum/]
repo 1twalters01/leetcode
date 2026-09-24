@@ -1,0 +1,41 @@
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+  pub val: i32,
+  pub next: Option<Box<ListNode>>
+}
+
+impl ListNode {
+  #[inline]
+  fn new(val: i32) -> Self {
+    ListNode {
+      next: None,
+      val
+    }
+  }
+}
+
+pub struct Solution;
+impl Solution {
+    pub fn add_two_numbers(
+        l1: Option<Box<ListNode>>,
+        l2: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
+        let carry = 0;
+        let v1: Vec<i32> = loop {
+            match l1 {
+                Some(Box(l1)) => {
+                    l1.val
+                },
+                None => break,
+            }
+        };
+        let v2: Vec<i32> = loop {
+            match l2 {
+                Some(Box(l2)) => {
+                    l2.val
+                },
+                None => break,
+            }
+        };
+    }
+}
